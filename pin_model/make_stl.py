@@ -4,8 +4,8 @@ import struct
 
 SEGMENTS = 96
 TOTAL_H = 17.0
-BOTTOM = (5.0, 6.0)   # (直径, 高度)
-FLANGE = (6.0, 4.0)
+BOTTOM = (5.0, 7.5)   # (直径, 高度)
+FLANGE = (6.0, 1.0)
 TOP = (3.0, TOTAL_H - BOTTOM[1] - FLANGE[1])
 
 # 轮廓：(半径, z) 从底面中心到顶面中心，绕 Z 轴旋转成实体
