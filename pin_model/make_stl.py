@@ -7,16 +7,20 @@ TOTAL_H = 17.0
 BOTTOM = (5.0, 7.5)   # (直径, 高度)
 FLANGE = (6.0, 1.0)
 TOP = (3.0, TOTAL_H - BOTTOM[1] - FLANGE[1])
+BOTTOM_C = 0.5   # 下段底端倒角 C0.5
+TOP_C = 0.3      # 上段顶端倒角 C0.3
 
 # 轮廓：(半径, z) 从底面中心到顶面中心，绕 Z 轴旋转成实体
 profile = [
     (0.0, 0.0),
-    (BOTTOM[0] / 2, 0.0),
+    (BOTTOM[0] / 2 - BOTTOM_C, 0.0),
+    (BOTTOM[0] / 2, BOTTOM_C),
     (BOTTOM[0] / 2, BOTTOM[1]),
     (FLANGE[0] / 2, BOTTOM[1]),
     (FLANGE[0] / 2, BOTTOM[1] + FLANGE[1]),
     (TOP[0] / 2, BOTTOM[1] + FLANGE[1]),
-    (TOP[0] / 2, TOTAL_H),
+    (TOP[0] / 2, TOTAL_H - TOP_C),
+    (TOP[0] / 2 - TOP_C, TOTAL_H),
     (0.0, TOTAL_H),
 ]
 
